@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Custom forms" %>
+
+<h1>Custom forms</h1>
+
+<div id="custom_forms">
+  <% @custom_forms.each do |custom_form| %>
+    <%= render custom_form %>
+    <p>
+      <%= link_to "Show this custom form", custom_form %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New custom form", new_custom_form_path %>

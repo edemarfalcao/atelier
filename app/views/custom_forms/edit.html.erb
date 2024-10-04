@@ -1,0 +1,12 @@
+<% content_for :title, "Editing custom form" %>
+
+<h1>Editing custom form</h1>
+
+<%= render "form", custom_form: @custom_form %>
+
+<br>
+
+<div>
+  <%= link_to "Show this custom form", @custom_form %> |
+  <%= link_to "Back to custom forms", custom_forms_path %>
+</div>

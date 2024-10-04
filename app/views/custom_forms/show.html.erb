@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @custom_form %>
+
+<div>
+  <%= link_to "Edit this custom form", edit_custom_form_path(@custom_form) %> |
+  <%= link_to "Back to custom forms", custom_forms_path %>
+
+  <%= button_to "Destroy this custom form", @custom_form, method: :delete %>
+</div>

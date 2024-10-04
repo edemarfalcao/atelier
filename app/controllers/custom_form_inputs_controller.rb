@@ -1,0 +1,2 @@
+class CustomFormInputsController < ApplicationController
+end
