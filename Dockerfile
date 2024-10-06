@@ -45,9 +45,6 @@ RUN bundle exec bootsnap precompile app/ lib/
 # Precompiling assets for production without requiring secret RAILS_MASTER_KEY
 RUN SECRET_KEY_BASE_DUMMY=1 ./bin/rails assets:precompile
 
-
-
-
 # Final stage for app image
 FROM base
 
@@ -64,7 +61,6 @@ USER 1000:1000
 # Entrypoint prepares the database.
 ENTRYPOINT ["/rails/bin/docker-entrypoint"]
 
-# Start the server by default, this can be overwritten at runtime
+# Start the server using Foreman by default
 EXPOSE 3000
-CMD ["./bin/rails", "server"]
-CMD ["bundle exec sidekiq"]
+CMD ["bundle", "exec", "foreman", "start"]
